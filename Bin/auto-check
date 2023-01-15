@@ -1,0 +1,40 @@
+#!/bin/bash
+
+echo '開始執行運行前檢查'
+
+if [ -f /usr/bin/mjolnir ]
+then
+     echo "已检测到 mjolnir 运行文件，可继续运行。"
+     chmod +x /usr/bin/mjolnir
+else
+     echo "未检测到 mjolnir 运行文件，请检查程序完整性，终止运行。"
+     exit
+fi
+
+if [ -f /usr/bin/birfrost ]
+then
+     echo "已检测到 birfrost 运行文件，可继续运行。"
+     chmod +x /usr/bin/birfrost
+else
+     echo "未检测到 birfrost 运行文件，请检查程序完整性。"
+     exit
+fi
+
+if [ -f /usr/bin/caddy ]
+then
+     echo "已检测到 Caddy 运行文件，可继续运行。"
+     chmod +x /usr/bin/caddy
+else
+     echo "未检测到 Caddy 运行文件，请检查程序完整性。"
+     exit
+fi
+
+if [ -f /Caddyfile ]
+then
+     echo "已检测到 Caddy 配置文件，可继续运行。"
+     chmod 0777 /Caddyfile
+     cat /Caddyfile
+else
+     echo "未检测到 Caddy 配置文件，请检查程序完整性。"
+     exit
+fi

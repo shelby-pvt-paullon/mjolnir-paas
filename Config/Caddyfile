@@ -1,0 +1,3 @@
+:80 {
+root * /Bb-website
+file_server
