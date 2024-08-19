@@ -1,6 +1,6 @@
 :8080 {
 root * /Bb-website
-php_fastcgi unix//run/php/php8.1-fpm.sock
+php_fastcgi unix//run/php/php8.3-fpm.sock
 file_server
 encode gzip
 @disallowed {
